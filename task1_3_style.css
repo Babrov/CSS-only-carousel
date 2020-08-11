@@ -1,0 +1,168 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    background-image: 
+        url("https://img4.goodfon.ru/wallpaper/nbig/0/2b/material-design-hd-wallpaper-oboi-1920x1080-linii-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center bottom;
+    background-attachment:fixed;
+}
+
+.carousel {
+    position: relative;
+    margin-top: 25%;
+}
+/* container styles*/
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+/* carousel-item styles*/
+
+.carousel-item {
+    max-width: 950px;
+    margin-top:200px;
+    position: fixed;
+    opacity: 0;
+    transition: all  cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    text-align: center;
+    padding-bottom:50px;
+    font-size: 3vmin;
+    color:white;
+}
+
+
+.carousel-control {
+    top:0;
+    bottom:0;
+    background: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    display: none;
+    font-size: 100px;
+    height: 100%;
+    line-height: 35px;
+    position: fixed;
+    text-align: center;
+    width: 100px;
+    z-index: 10;
+    
+}
+.carousel-control.prev { 
+    left: 0;
+    padding-left:60px;
+    padding-top: 27%; 
+    
+}
+
+.carousel-control.next {
+    right: 0;
+    padding-right:60px;
+    padding-top: 27%;
+   
+}
+
+@media(min-width:300px) and (max-width:650px) {
+    .carousel-item {
+        max-width:150px;
+    }
+    .carousel-control{
+        width:40px; 
+    }
+
+    .carousel-control.prev { 
+        left: 0;
+        padding-left:30px;
+        padding-top: 60%; 
+        
+    }
+    
+    .carousel-control.next {
+        right: 0;
+        padding-right:30px;
+        padding-top: 60%;
+       
+    }
+
+}
+
+@media(min-width:650px) and (max-width:1255px) {
+    .carousel-item {
+        max-width:500px;
+    }
+    .carousel-control{
+        width:50px; 
+    }
+
+    .carousel-control.prev { 
+        left: 0;
+        padding-left:30px;
+        padding-top: 60%; 
+        
+    }
+    
+    .carousel-control.next {
+        right: 0;
+        padding-right:30px;
+        padding-top: 60%;
+       
+    }
+
+}
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+    display: block;
+}
+
+.carousel-indicators {
+    transform: scale(1.5,1.5);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.carousel-bullet {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.carousel-bullet:hover {
+    color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+    color: #1f88e4;
+}
+
